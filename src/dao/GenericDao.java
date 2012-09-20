@@ -122,12 +122,22 @@ public class GenericDao {
 			st = conn.createStatement();
 			sql = "SELECT * FROM setor";
 			rs = st.executeQuery(sql);
-			
+
+			List<Setor> setores = new ArrayList<Setor>();
+
+			while (rs.next()) {
+				Setor setor = new Setor();
+				setor.setId(rs.getInt("id"));
+				setor.setNome(rs.getString("nome"));
+				setores.add(setor);
+			}
+			return setores;
+		
 		} catch (SQLException e) {
 			e.printStackTrace();
 			return null;
 		}
-		
+
 	}
 
 }
