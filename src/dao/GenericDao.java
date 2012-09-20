@@ -52,6 +52,8 @@ public class GenericDao {
 			ps.execute();
 		} catch (SQLException e) {
 			e.printStackTrace();
+		} catch (Exception e) {
+			e.printStackTrace();
 		}
 	}
 
@@ -71,10 +73,10 @@ public class GenericDao {
 
 	public void deletarFuncionario(Funcionario funcionario) {
 		try {
-			sql = "DELETE FROM funcionario WHERE id=?";
+			sql = "DELETE FROM funcionario WHERE cd_funcionario=?";
 			ps = conn.prepareStatement(sql);
 			ps.setInt(1, funcionario.getId());
-			ps.executeUpdate();
+			ps.execute();
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}

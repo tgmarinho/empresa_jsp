@@ -14,9 +14,11 @@
 <body>
 
 
-	<%request.setAttribute("pagina", "cad_funcinario"); %>
+	<%request.getSession().setAttribute("pagina", "cad_funcionario"); %>
 
 	<!-- Listar Funcionarios -->
+	
+	<a href="index.jsp">Voltar</a>
 
 	<h2 align="center">Funcionarios Cadastrados</h2>
 
@@ -57,7 +59,7 @@
 				<td>Nome: <input type="text" name="nome" /></td>
 			</tr>
 			<tr>
-				<td>Setor: <select name="cod_setor">
+				<td>Setor: <select name="cd_setor">
 						<% 
 				List<Setor> setores = conn.buscarTodosSetores();
 				for(Setor setor : setores){%>

@@ -12,9 +12,11 @@
 </head>
 <body>
 
-<%request.setAttribute("pagina", "cad_setor"); %>
+<%request.getSession().setAttribute("pagina", "cad_setor"); %>
 
 	<!-- Listar Setores -->
+	
+	<a href="index.jsp">Voltar</a>
 
 	<h2 align="center">Setores Cadastrados</h2>
 
